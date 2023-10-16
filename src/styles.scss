@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Archivo";
+    src: url('assets/Archivo-VariableFont_wdth,wght.ttf');
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(149deg, #131313 83.63%, #2F2F2F 107.59%);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: white;
+}
+.right-left {
+    @media (max-width: 1000px) {
+        animation: RightToLeft 15s infinite linear;    
+    }
+    
+}
+.left-right {
+    @media (max-width: 1000px) {
+        animation: LeftToRight 15s linear infinite;
+    }
+    
+}
+
+@keyframes RightToLeft {
+        
+    to {
+        transform: translateX(calc( -50% - 1.5rem));
+    }
+
+}
+@keyframes LeftToRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(calc(0% + 1.5rem));
+    }
+
+}

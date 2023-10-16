@@ -1,0 +1,25 @@
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-div {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  min-width: 300px; /* Adjust as needed */
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-container:hover .scroll-div {
+  transform: translateX(-10px);
+}
+
+.scroll-container:hover .scroll-div:hover {
+  transform: translateX(0);
+}
