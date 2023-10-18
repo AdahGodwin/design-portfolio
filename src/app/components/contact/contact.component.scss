@@ -1,6 +1,5 @@
 .container {
     margin: 0 138px 0 138px;
-
     @media (max-width:1300px) {
         margin: 0 7% 0 7%;
     }
@@ -72,6 +71,7 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        gap: 30px;
     }
 
     a {

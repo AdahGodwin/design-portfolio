@@ -18,14 +18,24 @@
         </section>
     </div>
     <div class="card-row">
-        <div class="card">
-            <img class="img" src="assets/images/prod1.png" width="100%" height="100%" alt="">
+        <div class="card" 
+        *ngFor="let image of images; 
+        let i = index"
+        [ngClass]="{
+            'selected': i === selectedIndex,
+            'prev': i === selectedIndex - 1,
+            'next': i === selectedIndex + 1,
+            'hideLeft': i < selectedIndex - 1,
+            'hideRight': i > selectedIndex + 1,
+            
+        }">
+              <section class="img" >
+                <img [src]="image" width="100%" height="100%" alt=""
+                (panright)="showPrev(i)"
+                (panLeft)="showNext(i)">
+                Name
+              </section>  
         </div>
-        <div class="card">
-            <img class="img" src="assets/images/prod2.png" width="100%" height="100%" alt="">
-        </div>
-        <div class="card">
-            <img class="img" src="assets/images/prod3.png" width="100%" height="100%" alt="">
-        </div>
+       
     </div>
 </div>

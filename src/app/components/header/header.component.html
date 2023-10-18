@@ -1,16 +1,33 @@
-<div class="header">
-    <section class="name">Ochanya A.</section>
-    <section class="links">
-        <span>Projects</span>
-        <span>About</span>
-    </section>
-    <section class="button">
-        <button mat-button color="white">Available for Freelance</button>
-    </section>
-    <button class='toggle' aria-haspopup='true' aria-controls='primary-navigation'>
-        <span class='line top'></span>
-        <span class='line mid'></span>
-        <span class='line bottom'></span>
-      </button>
-
+<div class="header-container">
+    <div class="header">
+        <section class="name">Ochanya A.</section>
+        <section class="links">
+            <span>Projects</span>
+            <span>About</span>
+        </section>
+        <section class="button">
+            <button mat-button color="white">Available for Freelance</button>
+        </section>
+        <button class='toggle' (click)="toggleMenu()" aria-haspopup='true' aria-controls='primary-navigation'>
+            <span class='line top' [attr.data-active]="isActive"></span>
+            <span class='line mid' [attr.data-active]="isActive"></span>
+            <span class='line bottom' [attr.data-active]="isActive"></span>
+          </button>
+    </div>
+    <div class="nav"  [attr.data-visible]="isActive">
+        <section class="link" [attr.data-visible]="isActive">Home</section>
+        
+        <section class="link" [attr.data-visible]="isActive">Projects</section>
+        <section class="link" [attr.data-visible]="isActive">About</section>
+        <button class="link"  [attr.data-visible]="isActive" mat-button color="white">Available for Freelance</button>
+        <hr [attr.data-visible]="isActive">
+            
+        <section class="mobile" [attr.data-visible]="isActive">
+            <a href="#">EM</a>
+            <a href="#">IG</a>
+            <a href="#">YT</a>
+            <a href="#">IN</a>
+        </section>
+        
+    </div>
 </div>

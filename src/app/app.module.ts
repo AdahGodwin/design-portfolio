@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
  
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { ContactComponent } from './components/contact/contact.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    HammerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

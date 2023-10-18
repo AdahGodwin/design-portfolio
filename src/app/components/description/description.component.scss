@@ -1,9 +1,10 @@
 .container {
     display: flex;
     justify-content: space-between;
-
+    padding-top: 200px;
     @media (max-width: 1000px) {
         flex-direction: column;
+        padding-top: 15%;
 
     }
     font-family: Archivo;
@@ -17,7 +18,7 @@
         display: flex;
         margin: 0 138px 0 138px;
     @media (max-width:1300px) {
-        margin: 0 5% 0 5%;
+        margin: 0 5% 30px 5%;
     }
     }
 
