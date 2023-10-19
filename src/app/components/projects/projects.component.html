@@ -17,22 +17,12 @@
             <span>View All Projects</span>
         </section>
     </div>
-    <div class="card-row">
+    <div class="card-row" #wrapperElement (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()">
         <div class="card" 
         *ngFor="let image of images; 
-        let i = index"
-        [ngClass]="{
-            'selected': i === selectedIndex,
-            'prev': i === selectedIndex - 1,
-            'next': i === selectedIndex + 1,
-            'hideLeft': i < selectedIndex - 1,
-            'hideRight': i > selectedIndex + 1,
-            
-        }">
+        let i = index">
               <section class="img" >
-                <img [src]="image" width="100%" height="100%" alt=""
-                (panright)="showPrev(i)"
-                (panLeft)="showNext(i)">
+                <img [src]="image" width="100%" height="100%" alt="">
                 Name
               </section>  
         </div>

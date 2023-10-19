@@ -16,6 +16,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { HomescreenComponent } from './screens/homescreen/homescreen.component';
+import { ProjectscreenComponent } from './screens/projectscreen/projectscreen.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ProjectsComponent,
     SkillsComponent,
     ContactComponent,
+    HomescreenComponent,
+    ProjectscreenComponent,
   ],
   imports: [
     BrowserModule,

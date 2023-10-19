@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -12,16 +12,33 @@ export class ProjectsComponent {
   "assets/images/prod3.png"
  ];
  selectedIndex: number = 0;
- showPrev(i: number) {
-  if (this.selectedIndex > 0) {
-    this.selectedIndex = i-1;
+ pressed = false;
+ startX = 0;
 
-  }
+ @ViewChild('wrapperElement') wrapper!: ElementRef;
+
+ onMouseDown(event: MouseEvent) {
+   this.pressed = true;
+   this.startX = event.clientX;
  }
- showNext(i: number) {
-  if (this.selectedIndex < this.images.length - 1 ) {
-    this.selectedIndex = i+1;
-    
-  }
+
+ onMouseUp() {
+   this.pressed = false;
+ }
+
+ @HostListener('document:mouseleave')
+ onMouseLeave() {
+   this.pressed = false;
+ }
+
+ @HostListener('document:mousemove', ['$event'])
+ onMouseMove(event: MouseEvent) {
+   if (!this.pressed) {
+     return;
+   }
+
+   const wrapperElement: HTMLElement = this.wrapper.nativeElement;
+   wrapperElement.scrollLeft += this.startX - event.clientX;
  }
 }
+
