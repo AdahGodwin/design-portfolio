@@ -76,17 +76,17 @@
             }
 
             .top[data-active='true'] {
-                transform: translateY(0.25rem) rotate(45deg);
+                transform: translateY(0.3rem) rotate(45deg);
             }
 
             .mid[data-active='true'] {
-                transform: translateY(-0.16rem) rotate(135deg);
+                width: 0;
+                transform: translateY(-0.48rem) rotate(135deg);
             }
 
             .bottom[data-active='true'] {
-                width: 0;
-                transform: translateY(-0.16rem) rotate(135deg);
-           
+                transform: translateY(-0.48rem) rotate(135deg);
+
             }
         }
     }
@@ -147,7 +147,7 @@
     justify-content: space-between;
     align-items: center;
     transition: all 3s ease;
-    
+
     &[data-visible='true'] {
         opacity: 1;
     }
