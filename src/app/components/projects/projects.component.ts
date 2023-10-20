@@ -11,7 +11,7 @@ export class ProjectsComponent {
   "assets/images/prod2.png",
   "assets/images/prod3.png"
  ];
- selectedIndex: number = 0;
+//  selectedIndex: number = 0;
  pressed = false;
  startX = 0;
 

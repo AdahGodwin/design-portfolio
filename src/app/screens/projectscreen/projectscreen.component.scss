@@ -1,14 +1,79 @@
-.container {
+.row {
+    // position: absolute;
+    margin: 30px;
     display: flex;
     justify-content: center;
-    margin-top: 30%;
+    gap: 3rem;
+    transition: all 400ms linear;
+    &[data-hovered= 'true'] {
+        opacity: 0;
+        overflow: hidden;
+        gap: 0;
+            
+    }
+
+}
+
+
+.images {
+    &::-webkit-scrollbar {
+        width: 0.01px;
+        /* Width of the scrollbar */
+    }
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    scroll-snap-type: y;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100vw;
+    transition: all 400ms linear;
+    height: 100vh;
+    scroll-behavior: smooth;
+    .image {
+        &[data-hovered= 'true'] {
+            height: 75vh;
+            img {
+                height: 79%;
+                margin-top: 0;
+            }
+        }
+        scroll-snap-align: start;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 400ms linear;
+        height: 100vh;
+        width: 100vw;
+
+        img {
+            margin-top: 100px;
+            transition: all 400ms ease;
+            width: 64%;
+            height: 65%;
+            object-fit: cover;
+            border-radius: 45px;
+            
+        }
+    }
+}
+
+
+.bar-container {
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    z-index: 50;
+    top: 50%;
+    right: 10%;
+    position: fixed;
 
     .bars {
-
         display: flex;
         justify-content: space-evenly;
-           
-        align-items: flex-end;
+
         flex-direction: row;
         width: 100px;
         height: 50px;
@@ -62,8 +127,4 @@
         }
 
     }
-
-
-
-
 }

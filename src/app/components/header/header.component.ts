@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isActive: boolean = false; 
-  loading = true;
-
+  @Input() show!: boolean;
   
   toggleMenu() {
     this.isActive = !this.isActive;

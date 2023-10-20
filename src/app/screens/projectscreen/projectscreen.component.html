@@ -1,11 +1,24 @@
-<app-header></app-header>
-<div class="container">
-    <div class="bars">
-        <div class="line" *ngFor="let num of range; let i = index"
-             [ngClass]="{
-                'selected': i == selectedIndex
-             }"
-             (mouseover)="setIndex(i)"></div>
-        
+<app-header class="app-header" [show]="isHovered"></app-header>
+<div #container class="images">
+    <div class="image" *ngFor="let image of images; let i = index" [attr.data-hovered]="isHovered">
+        <img [src]="image" alt="image">
+        <div class="row" [attr.data-hovered]="isHovered">
+            <div>
+                <section>Rousolletti</section>
+                <section>Brand Foodhub</section>
+            </div>
+            <div>
+                <section>Design design</section>
+                <section>09/29/23</section>
+            </div>
+        </div>
+    </div>
+    <div class="bar-container">
+        <div class="bars" (mouseleave)="isHovered = false">
+            <div class="line" *ngFor="let num of images; let i = index" [ngClass]="{
+                    'selected': i == selectedIndex
+                 }" (mouseover)="setIndex(i)"></div>
+    
+        </div>
     </div>
 </div>
