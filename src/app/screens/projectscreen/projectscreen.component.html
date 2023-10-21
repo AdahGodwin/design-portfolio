@@ -1,5 +1,13 @@
 <app-header class="app-header" [show]="isHovered"></app-header>
 <div #container class="images">
+    <div class="bar-container">
+        <div class="bars" (mouseleave)="isHovered = false" [attr.data-hovered]="isHovered">
+            <div class="line" *ngFor="let num of images; let i = index" [ngClass]="{
+                    'selected': i == selectedIndex
+                 }" (mouseover)="setIndex(i)"></div>
+    
+        </div>
+    </div>
     <div class="image" *ngFor="let image of images; let i = index" [attr.data-hovered]="isHovered">
         <img [src]="image" alt="image">
         <div class="row" [attr.data-hovered]="isHovered">
@@ -13,12 +21,5 @@
             </div>
         </div>
     </div>
-    <div class="bar-container">
-        <div class="bars" (mouseleave)="isHovered = false">
-            <div class="line" *ngFor="let num of images; let i = index" [ngClass]="{
-                    'selected': i == selectedIndex
-                 }" (mouseover)="setIndex(i)"></div>
     
-        </div>
-    </div>
 </div>
