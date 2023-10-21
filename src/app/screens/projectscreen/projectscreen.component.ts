@@ -15,28 +15,35 @@ export class ProjectscreenComponent {
     "assets/images/img4.png",
     "assets/images/img4.png",
   ];
-  windowHeight!: number;
+  // windowHeight!: number;
+  // windowWidth!: number;
   sections!: HTMLElement[];
   selectedIndex: number = 0;
   isHovered = false;
 
   ngAfterViewInit(): void {
-    this.windowHeight = window.innerHeight;
+    // this.windowHeight = window.innerHeight;
+    // this.windowWidth = window.innerWidth;
     this.sections = Array.from(document.querySelectorAll('.image'));
     this.container.nativeElement.addEventListener('scroll', this.onScroll.bind(this));
   }
 
   onScroll() {
-    const scrollTop = this.container.nativeElement.scrollTop;
+    var windowWidth: number = window.innerWidth;
+    var windowHeight: number = this.isHovered === true ? window.innerHeight * 0.7 : window.innerHeight;
+    var windowValue: number = windowWidth > 700 ? windowHeight: windowWidth;
+    var scrollValue:number = windowWidth > 700 ? this.container.nativeElement.scrollTop: this.container.nativeElement.scrollLeft;
+    
     this.sections.forEach((section, i) => {
-      const sectionOffsetTop = section.offsetTop;
-      var windowHeight = this.isHovered === true ? this.windowHeight * 0.7 : this.windowHeight;
-      if (
-        sectionOffsetTop < scrollTop + windowHeight / 2 &&
-        scrollTop < sectionOffsetTop + windowHeight / 2
-      ) {
-        this.selectedIndex = i;
-      }
+      const sectionOffsetValue = windowWidth > 700 ? section.offsetTop : section.offsetLeft;
+
+        if (
+          sectionOffsetValue < scrollValue + windowValue / 2 &&
+          scrollValue < sectionOffsetValue + windowValue / 2
+        ) {
+          this.selectedIndex = i;
+        }
+      
     });
   }
   setIndex(index: number) {
@@ -48,7 +55,7 @@ export class ProjectscreenComponent {
   }
 
   scrollToIndex(index: number) {
-    var windowHeight = this.isHovered === true ? this.windowHeight * 0.7 : this.windowHeight;
+    var windowHeight = this.isHovered === true ? window.innerHeight * 0.7 : window.innerHeight;
     if (index >= 0 && index < this.images.length) {
       this.container.nativeElement.scrollTo({
         top: index * windowHeight,
