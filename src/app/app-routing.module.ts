@@ -4,9 +4,9 @@ import { HomescreenComponent } from './screens/homescreen/homescreen.component';
 import { ProjectscreenComponent } from './screens/projectscreen/projectscreen.component';
 
 const routes: Routes = [
-  { path:'', redirectTo:'home', pathMatch: "full"},
-  {path:'home', component: HomescreenComponent,},
-  {path:'projects', component: ProjectscreenComponent,},
+  // { path:'', redirectTo:'home', pathMatch: "full"},
+  // {path:'home', component: HomescreenComponent,},
+  // {path:'projects', component: ProjectscreenComponent,},
 ];
 
 @NgModule({
