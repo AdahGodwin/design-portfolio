@@ -1,0 +1,187 @@
+.container {
+    font-family: Archivo;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    
+
+    .introduction {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        text-transform: uppercase;
+
+        @media (min-width: 700.5px) {
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .col-1 {
+            @media (min-width: 700.5px) {
+                position: absolute;
+                text-align: start;
+                margin-top: 150px;
+            }
+
+
+
+            .skills-section {
+                margin-top: 80px;
+
+                .title {
+                    color: #FFFFFFB5;
+                }
+
+                .skills {
+                    margin-top: 37px;
+                    font-size: 20px;
+                    font-weight: 400;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .name-intro {
+            font-size: 180px;
+            line-height: 79.944%;
+            max-width: 992px;
+
+            @media (max-width: 1629px) {
+                font-size: 130px;
+            }
+
+            @media (max-width: 1329px) {
+                font-size: 100px;
+                max-width: 692px;
+
+            }
+
+            @media (max-width: 1069px) {
+                font-size: 80px;
+                max-width: 492px;
+            }
+
+            @media (max-width: 700px) {
+                position: absolute;
+                bottom: 0;
+                font-size: 50px;
+                z-index: 4;
+            }
+        }
+
+        .web {
+            @media (max-width: 700px) {
+                display: none;
+            }
+        }
+
+        .mobile {
+            @media (min-width: 700.5px) {
+                display: none;
+            }
+        }
+
+        .image-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @media (min-width: 700.5px) {
+                width: 65%;
+            }
+
+            hr {
+                width: 100%;
+            }
+
+            .project-name {
+                font-size: 120px;
+                letter-spacing: -6.6px;
+
+                @media (max-width: 1629px) {
+                    font-size: 100px;
+                }
+
+                @media (max-width: 1329px) {
+                    font-size: 80px;
+                }
+
+                @media (max-width: 1069px) {
+                    font-size: 50px;
+                }
+            }
+
+            .image-container {
+                width: 100%;
+                z-index: -1;
+                position: relative;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    // height: 100%;
+                    border-radius: 45px;
+                }
+            }
+
+        }
+    }
+
+}
+
+.section-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+
+    div {
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.challenge-section {
+    margin-top: 50px;
+
+    .section-details {
+        margin-bottom: 150px;
+        margin-top: 30px;
+    
+    }
+
+    .challenge-approach {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+
+        @media (max-width:700px) {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .title {
+            text-transform: uppercase;
+        }
+
+        .text {
+            width: 65%;
+            font-size: 45px;
+            text-indent: 70px;
+
+            @media (max-width: 850px) {
+                font-size: 30px;
+            }
+
+            @media (max-width:700px) {
+                width: 100%;
+            }
+        }
+    }
+}

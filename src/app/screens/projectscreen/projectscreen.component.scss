@@ -249,7 +249,7 @@
         height: 50px;
 
         .line {
-            height: 20px;
+            height: 15px;
             width: 3px;
             transition: all 200ms linear;
             background-color: grey;
@@ -261,7 +261,7 @@
             height: 30px;
             background-color: white;
         }
-
+        
         @media (min-width: 700.5px) {
             width: 50px;
             height: 100px;
@@ -283,7 +283,7 @@
             //     }
             // }
             .line {
-                width: 20px;
+                width: 15px;
                 height: 3px;
                 transition: all 200ms linear;
                 background-color: grey;

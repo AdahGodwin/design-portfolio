@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, HostListener, OnInit, AfterViewInit } from '@angular/core';
+
 interface project {
   name: string,
   image: string,
@@ -83,6 +84,8 @@ export class ProjectscreenComponent {
       ) {
         this.selectedIndex = i;
       }
+      
+      
 
     });
   }

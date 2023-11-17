@@ -18,6 +18,11 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomescreenComponent } from './screens/homescreen/homescreen.component';
 import { ProjectscreenComponent } from './screens/projectscreen/projectscreen.component';
+import { ProjectDetailsScreenComponent } from './screens/projectdetailsscreen/project-details-screen/project-details-screen.component';
+import { ProjectIntroComponent } from './screens/projectdetailsscreen/project-intro/project-intro.component';
+import { LandingPageComponent } from './screens/projectdetailsscreen/landing-page/landing-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProjectImagesComponent } from './screens/projectdetailsscreen/project-images/project-images.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { ProjectscreenComponent } from './screens/projectscreen/projectscreen.co
     ContactComponent,
     HomescreenComponent,
     ProjectscreenComponent,
+    ProjectDetailsScreenComponent,
+    ProjectIntroComponent,
+    LandingPageComponent,
+    FooterComponent,
+    ProjectImagesComponent,
   ],
   imports: [
     BrowserModule,
