@@ -1,38 +1,20 @@
 .container {
-    margin: 0 138px 0 138px;
+    margin: 120px 138px 0 138px;
     @media (max-width:1300px) {
-        margin: 0 7% 0 7%;
+        margin: 120px 7% 0 7%;
     }
     font-family: Archivo;
     font-style: normal;
     line-height: normal;
     text-transform: uppercase;
-
-    .heading {
-        margin-top: 21px;
-        margin-bottom: 60px;
+    .page {
+        font-size: 20px;
         display: flex;
-        justify-content: space-between;
-
-        .links a {
-            text-decoration: none;
-            color: white;
-
-        }
-
-        .pc {
-            @media (max-width: 600px) {
-                display: none;
-            }
-        }
-
-        .mobile {
-            @media (min-width: 600.5px) {
-                display: none;
-            }
-        }
+        margin-bottom: 20px;
+    @media (max-width:1300px) {
+        margin-bottom: 20px;
     }
-
+    }
     .about {
         position: relative;
         overflow: hidden;
@@ -108,16 +90,16 @@
 
         height: 100px;
         border-radius: 50%;
-        border: 2px solid white;
+        border: 2px solid black;
     }
 
     .name {
         display: flex;
         width: max-content;
         position: absolute;
-        font-size: 200px;
+        font-size: 180px;
         font-weight: 400;
-        bottom: 0;
+        bottom: 60px;
     }
 
     .righttoleft {
