@@ -7,32 +7,67 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
-    background:#FAF9F6;
+    background: #FAF9F6;
     color: black;
 }
+
 .right-left {
-        animation: RightToLeft 15s infinite linear;    
-    }
+    animation: RightToLeft 21s infinite linear;
+    animation-delay: 1.5s;
+}
+
 .left-right {
-        animation: LeftToRight 15s linear infinite;    
+    animation: LeftToRight 21s linear infinite;
+    animation-delay: 1.5s;
 }
 
 @keyframes RightToLeft {
-        
+
     to {
-        transform: translateX(calc( -50% - 1.5rem));
+        transform: translateX(calc(-50% - 1.5rem));
     }
 
 }
+
 @keyframes LeftToRight {
     from {
         transform: translateX(-50%);
     }
+
     to {
         transform: translateX(calc(0% + 1.5rem));
     }
 
+}
+
+.view {
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    position: relative;
+
+    svg {
+        position: absolute;
+    }
+}
+
+.hr-line {
+    hr {
+        float: left;
+        width: 0;
+
+    }
+
+    height: 10px;
+   
 }

@@ -1,12 +1,12 @@
 <div class="header-container" [attr.show-header]="show">
-    <div class="header">
+    <div class="header" #header>
         <section class="name">Ochanya A.</section>
         <section class="links">
-            <span>Projects</span>
-            <span>About</span>
+            <section>Projects</section>
+            <section>About</section>
         </section>
-        <section class="button">
-            <button mat-button color="white">Available for Freelance</button>
+        <section>
+            <button  class="button" mat-button color="white">Available for Freelance</button>
         </section>
         <button class='toggle' (click)="toggleMenu()" aria-haspopup='true' aria-controls='primary-navigation'>
             <span class='line top' [attr.data-active]="isActive"></span>

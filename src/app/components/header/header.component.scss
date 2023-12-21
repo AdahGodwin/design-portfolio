@@ -1,8 +1,10 @@
 .header-container {
     transition: all 300ms linear;
+
     &[show-header="true"] {
         opacity: 0;
     }
+
     z-index: 300;
     position: fixed;
     width: 100vw;
@@ -11,14 +13,14 @@
     line-height: normal;
     text-transform: uppercase;
     color: #131313;
-       
+
     .header {
         padding: 38px 138px 0 138px;
 
         @media (max-width:1300px) {
             padding: 35px 5% 0 5%;
         }
-
+        
         color: #131313;
         display: flex;
         flex-direction: row;
@@ -36,14 +38,31 @@
         }
 
         .links {
+            transition: all .3s;
             display: flex;
             gap: 74px;
+
             font-family: Archivo;
             font-size: 20px;
             font-weight: 400;
-
+            align-items: center;
+                            
             @media (max-width: 1135.5px) {
                 display: none;
+            }
+            section {
+                cursor: pointer;
+                transition: all 300ms;
+                padding: 10px;
+                border-radius: 20px;
+                width: 140px;
+                text-align: center;
+                   
+                &:hover {
+                  color: #fff;
+                    border: 1px solid #131313;
+                    background-color: darken(black, 15%);
+                }
             }
         }
 
@@ -51,14 +70,39 @@
             text-align: center;
             // color: white;
             border: 1px solid #131313;
-            ;
             border-radius: 20px;
             width: 300px;
+            text-transform: uppercase;
+            transition: all .3s;
 
             @media (max-width: 1135.5px) {
                 display: none;
             }
+
+            
+            overflow: hidden;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background-color: darken(black, 15%);
+                transition: all .3s;
+                border-radius: 10rem;
+                z-index: -1;
+            }
+
+            &:hover {
+                color: #fff;
+
+                &:before {
+                    width: 100%;
+                }
+            }
         }
+
 
         .toggle {
             border: none;
@@ -79,7 +123,6 @@
                 height: 0.125rem;
                 transition: 250ms ease-in;
                 background-color: #131313;
-                ;
             }
 
             .top[data-active='true'] {
@@ -102,7 +145,7 @@
         z-index: 400;
         display: flex;
         flex-direction: column;
-        background-color: white;
+        // background-color: white;
         gap: 7%;
         align-items: center;
         height: 0;
@@ -133,6 +176,7 @@
             border-radius: 20px;
             padding: 10px 20px;
             transition: all 500ms ease;
+            cursor: pointer;
 
             &[data-visible='true'] {
                 opacity: 1;

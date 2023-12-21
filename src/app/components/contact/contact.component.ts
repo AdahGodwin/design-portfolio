@@ -1,10 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, } from '@angular/core';
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
 
+export class ContactComponent {
+  @ViewChild('svgBorder') pathElement!: ElementRef<SVGPathElement>;
+
+connectText!: SplitType;
+
+  ngAfterViewInit(): void {
+  this.connectText = new SplitType('.connect, .text-1');
+  this.animation();
+  
+} 
+  animation() {
+    let pathLength: string = this.pathElement.nativeElement.getTotalLength().toString();
+    console.log('Path length:', pathLength);
+    let animationTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#svg-border',
+        start: "20% 100%"
+      }
+    });
+
+    animationTimeline
+    .fromTo('#svg-border', {
+      strokeDasharray: '0, ' + pathLength,
+      opacity:0
+    },{
+      strokeDasharray: pathLength +',' + ' 0',
+      duration: 2.5,
+      ease: "linear",
+      opacity:1
+    },)
+    .from(this.connectText.chars,{
+      y: 200,
+      duration: 1.5,
+      stagger: 0.03,
+      ease: "power4.out",
+    }, '<')
+    .from("#circle-2", {
+      
+      rotation: 440,
+      duration: 2,
+      ease: "power4.out",
+    }, '-=1')
+    .to('#path-2', {
+      
+      strokeDasharray: '440, ' + '0',
+      duration: 2,
+      ease: "power4.out",
+    }, '<')
+    .from('.view-text-2', {
+      
+      opacity: 0,
+      y: -10,
+      duration: 1,
+      // delay:0.5
+    }, '<')
+  }
 }

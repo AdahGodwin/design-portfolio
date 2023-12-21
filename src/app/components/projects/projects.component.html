@@ -1,29 +1,56 @@
 <div class="container">
-    <hr size="1">
-    <div class="heading">
+    <div class="hr-line">
+        <hr class="hr1">
+    </div>
+    <div class="heading heading-1" #heading>
         <section>02/</section>
         <section>PROJECTS</section>
         <section></section>
         <section>/04</section>
     </div>
     <div class="details">
-        
-        <section class="intro">
-            Here are some select projects that showcase my passion for creating memorable web experiences, products, and bringing brands to life.
-        </section>
+        <div class="intro" #intro>
+            <p class="text">Here are some select projects that showcase my passion for creating memorable web
+                experiences, products, and bringing brands to life.
+            </p>
+        </div>
         <section class="view" routerLink="/projects">
-            <span>View All Projects</span>
+            <svg id="circle" height="150" width="150">
+                <path id="path" d="
+                M 75, 75
+                m 70, 0
+                a 70,70 0 1,0 -140,0
+                a 70,70 0 1,0  140,0
+                " fill="transparent" stroke="black" stroke-dasharray="0 440" />
+                <!-- <circle cx="75" cy="75" r="70" stroke="black" stroke-width="2" fill="transparent"/> -->
+
+            </svg>
+            <span class="view-text">View All Projects</span>
         </section>
     </div>
-    <div class="card-row" #wrapperElement (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()">
-        <div class="card" 
-        *ngFor="let image of images; 
+    <div class="card-row" #wrapperElement>
+        <div class="card" *ngFor="let image of images; 
         let i = index">
-              <section class="img">
-                <img [src]="image" width="100%" height="100%" alt="">
-                Name
-              </section>  
+            <div class="img">
+                <img [src]="image" width="100%" height="100%" alt="Img">
+                <div class="img-content">
+                    <section class="img-name">
+                        IMAGE NAME
+                    </section>
+                    <section class="img-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias, ad quod id eaque fugit atque
+                        quis quia optio, veritatis facere aspernatur? Porro consequatur ullam odio id at est vel.
+                    </section>
+                    <div>
+                        <button mat-raised-button>Open Project</button>
+                    </div>
+                </div>
+            </div>
+            <div class="img-details">
+                <div>Four Classic</div>
+            <div>Website Design + Brand revolution</div>
+            </div>
         </div>
-       
+
     </div>
 </div>

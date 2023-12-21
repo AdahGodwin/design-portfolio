@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
+import { BrowserModule,} from '@angular/platform-browser';
  
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomescreenComponent } from './screens/homescreen/homescreen.component';
@@ -48,7 +49,6 @@ import { ProjectImagesComponent } from './screens/projectdetailsscreen/project-i
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    HammerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
