@@ -1,12 +1,12 @@
 .container {
-    margin: 50px 138px 0 138px;
+    margin: 0 138px 0 138px;
     font-family: Archivo;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 
     @media (max-width:1300px) {
-        margin: 50px 7% 0 7%;
+        margin: 0 7% 0 7%;
     }
 
     .heading {
@@ -37,7 +37,7 @@
     .card-row {
         display: flex;
         position: relative;
-        gap: 1rem;
+        // gap: 1rem;
         width: 100%;
         overflow-x: auto;
         scroll-snap-type: x;
@@ -45,11 +45,65 @@
         /* Firefox */
         -ms-overflow-style: none;
         margin-top: 5%;
-        height: 1000px;
-            
+        min-height: 450px;
+
+        .img-content {
+            pointer-events: none;
+            color: white;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            text-shadow: 1px 1px 2px black;
+            width: 100%;
+            height: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            transition: all .5s linear;
+
+            .img-name {
+                font-size: 18px;
+            }
+
+            .img-desc {
+                font-size: 30px;
+                line-height: normal;
+                text-align: center;
+                font-size: 100px;
+                overflow: hidden;
+            }
+
+            opacity: 0;
+
+            @media (max-width:1000px) {
+                display: none;
+            }
+
+
+        }
+
         .card {
+            padding: 1rem;
+
+            .selected {
+                @media (min-width: 1000.5px) {
+                    transition: opacity .5s;
+                    filter: drop-shadow(2px 2px 4px grey);
+                }
+            }
+
+            .unselected {
+                @media (min-width: 1000.5px) {
+
+                    filter: brightness(30%);
+
+                }
+            }
+
             max-width: 750px;
-            position: relative;
+
             @media (max-width: 1000px) {
 
                 gap: 0;
@@ -64,74 +118,49 @@
                 min-width: calc(100% - 2rem);
 
             }
+
+            &:hover {
+                @media (min-width: 1000.5px) {
+                    .img-content {
+                        opacity: 1;
+                    }
+
+                    .img-details {
+
+                        opacity: 1;
+                    }
+                }
+
+
+            }
+
             .img-details {
                 display: flex;
                 flex-direction: column;
-                gap:5px;
+                gap: 5px;
                 text-transform: uppercase;
                 font-size: 17px;
                 padding-left: 20px;
                 padding-top: 10px;
-                @media (min-width:1000.5px) {
-                display: none;
+                opacity: 0;
+                transition: all 500ms linear;
+
+                @media (max-width: 1000px) {
+                    opacity: 1;
+
                 }
+
             }
+
             .img {
+                position: relative;
                 border-radius: 50px;
                 overflow: hidden;
-                position: relative;
 
                 @media (max-width:1000px) {
                     transition: 500ms cubic-bezier(0.17, 0.67, 0.55, 1.43, );
                 }
-
-                .img-content {
-                    color: white;
-                    padding: 10% 0 7% 10%;
-                    position: absolute;
-                    top: 0;
-                    transition: all 300ms;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.712);
-                    backdrop-filter: blur(2px);
-                    // border-radius: 55px;
-
-                    .img-name {
-                        font-size: 40px;
-                    }
-
-                    .img-desc {
-                        width: 75%;
-                        font-size: 30px;
-                        line-height: normal;
-                    }
-
-                    button {
-                        border-radius: 10px;
-                        padding: 30px 30px;
-                    }
-
-                    opacity: 0;
-                    right: 10px;
-                    @media (max-width:1000px) {
-                        display: none;
-                    }
-                    @media (min-width: 1000.5px) {
-                        &:hover {
-                            opacity: 1;
-                     right: 0;
-                        }  
-                    }
-                }
-
-                
             }
-
-
         }
     }
 

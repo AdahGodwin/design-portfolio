@@ -22,7 +22,6 @@ connectText!: SplitType;
 } 
   animation() {
     let pathLength: string = this.pathElement.nativeElement.getTotalLength().toString();
-    console.log('Path length:', pathLength);
     let animationTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: '#svg-border',
@@ -52,9 +51,9 @@ connectText!: SplitType;
       duration: 2,
       ease: "power4.out",
     }, '-=1')
-    .to('#path-2', {
+    .from('#path-2', {
       
-      strokeDasharray: '440, ' + '0',
+      strokeDasharray: '0, ' + '440',
       duration: 2,
       ease: "power4.out",
     }, '<')

@@ -34,8 +34,6 @@ export class ProjectscreenComponent {
       name: "Kapsul",
       image: "assets/images/img4.png",
     },
-
-
   ];
   sections!: HTMLElement[];
   selectedIndex: number = 0;

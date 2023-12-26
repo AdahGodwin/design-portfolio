@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, ViewChild, OnInit, Inject } from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { DOCUMENT } from '@angular/common';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,11 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
   @ViewChild('header', { static: true })
   headerSection!: ElementRef<HTMLDivElement>;
-
-  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   isActive: boolean = false; 
   @Input() show!: boolean;
@@ -22,7 +19,7 @@ export class HeaderComponent implements OnInit {
   toggleMenu() {
     this.isActive = !this.isActive;
   }
-  ngOnInit(): void {
+  ngAfterViewInit(){
     this.animateHeader();
   }
   animateHeader() {

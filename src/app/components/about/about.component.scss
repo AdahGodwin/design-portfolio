@@ -1,20 +1,27 @@
 .container {
     margin: 120px 138px 0 138px;
+
     @media (max-width:1300px) {
         margin: 120px 7% 0 7%;
     }
+
     font-family: Archivo;
     font-style: normal;
     line-height: normal;
     text-transform: uppercase;
+
     .page {
+        overflow: hidden;
         font-size: 20px;
-        display: flex;
+        display: inline-block;
         margin-bottom: 20px;
-    @media (max-width:1300px) {
-        margin-bottom: 20px;
+        clip-path: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)';
+     
+        @media (max-width:1300px) {
+            margin-bottom: 20px;
+        }
     }
-    }
+
     .about {
         position: relative;
         overflow: hidden;
@@ -24,45 +31,41 @@
 
         @media (max-width: 1400px) {
             flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
-            // gap: 50px;
+            
         }
 
-        .intro {
-            @media (max-width: 1400px) {
-                max-width: 600px;
-                margin-bottom: 100px;
-                display: flex;
-                align-self: center;
-            }
-
-            text-indent: 25px;
-            font-size: 18px;
-            font-weight: 400;
-            max-width: 300px;
-        }
-
-        .card {
+        .card-1 {
             max-width: 650px;
-            height: 719px;
-            background: #080808;
+            min-width: 300px;
             border-radius: 45px;
+            overflow: hidden;
             z-index: -1;
-            filter: drop-shadow(0 0 2px #131313);
+            position: relative;
 
             .img {
                 border-radius: 45px;
+                z-index: -1;
+                visibility: hidden;
+            }
+
+            .card-cover {
+                display: flex;
+                min-width: 100%;
+                height: 100%;
+                background-color: #080808;
+                position: absolute;
+                z-index: 5;
             }
         }
 
         .image-row {
             position: relative;
 
+            overflow: hidden;
             display: flex;
             align-items: center;
             gap: 50px;
-
+            min-height: 419px;
             @media (max-width: 1400px) {
                 flex-direction: column;
                 justify-content: center;
@@ -81,25 +84,16 @@
             display: none;
         }
 
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        padding: 20px;
-        width: 100px;
+     }
 
-        height: 100px;
-        border-radius: 50%;
-        border: 2px solid black;
-    }
-
-    .name {
+    .name-1 {
         display: flex;
         width: max-content;
         position: absolute;
         font-size: 180px;
         font-weight: 400;
         bottom: 60px;
+        overflow: hidden;
     }
 
     .righttoleft {

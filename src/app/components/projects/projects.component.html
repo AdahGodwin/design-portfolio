@@ -22,33 +22,33 @@
                 a 70,70 0 1,0 -140,0
                 a 70,70 0 1,0  140,0
                 " fill="transparent" stroke="black" stroke-dasharray="0 440" />
-                <!-- <circle cx="75" cy="75" r="70" stroke="black" stroke-width="2" fill="transparent"/> -->
-
             </svg>
             <span class="view-text">View All Projects</span>
         </section>
     </div>
     <div class="card-row" #wrapperElement>
-        <div class="card" *ngFor="let image of images; 
-        let i = index">
-            <div class="img">
-                <img [src]="image" width="100%" height="100%" alt="Img">
+        <div class="card" *ngFor="let project of projects;
+        let i = index"
+        (mouseover)="setIndex(i)" 
+        (mouseleave)="setIndex(-1)">
+
+            <div class="img" [ngClass]="{
+                'selected': i == hoveredIndex,
+                'unselected': i !== hoveredIndex && hoveredIndex !== -1,
+            }">
                 <div class="img-content">
                     <section class="img-name">
-                        IMAGE NAME
+                        Featured Project
                     </section>
                     <section class="img-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias, ad quod id eaque fugit atque
-                        quis quia optio, veritatis facere aspernatur? Porro consequatur ullam odio id at est vel.
+                        {{project.name}}
                     </section>
-                    <div>
-                        <button mat-raised-button>Open Project</button>
-                    </div>
                 </div>
+                <img [src]="project.image" width="100%" height="100%" alt="Img">
             </div>
             <div class="img-details">
                 <div>Four Classic</div>
-            <div>Website Design + Brand revolution</div>
+                <div>Website Design + Brand revolution</div>
             </div>
         </div>
 

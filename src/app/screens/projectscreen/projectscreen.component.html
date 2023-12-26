@@ -1,49 +1,53 @@
 <app-header class="app-header" [show]="isHovered"></app-header>
-<div #container class="images">
-    <div class="bar-container">
-        <div class="bars" (mouseleave)="isHovered = false" [attr.data-hovered]="isHovered">
-            <div class="line" *ngFor="let num of images; let i = index" [ngClass]="{
-                    'selected': i == selectedIndex
-                 }" (mouseover)="setIndex(i)"></div>
-
-        </div>
-    </div>
-    <div class="row-texts" [attr.data-hovered]="isHovered">
-        <div class="number">
-            <div style="position: relative;">
-                <section style="margin-right: 8px;">00.0</section>
-                <section class="num" *ngFor="let image of images; let i = index" [ngClass]="{
-                                'selected': i == selectedIndex,
-                                'prev': i == selectedIndex - 1,
-                                'next': i == selectedIndex + 1
-                                }">
-                               {{i + 1}}
-                </section>
+<div id="wrapper">
+    <div id="content">
+        <div #container class="images">
+            <div class="bar-container">
+                <div class="bars" (mouseleave)="isHovered = false" [attr.data-hovered]="isHovered">
+                    <div class="line" *ngFor="let num of images; let i = index" [ngClass]="{
+                            'selected': i == selectedIndex
+                         }" (mouseover)="setIndex(i)"></div>
+        
+                </div>
             </div>
-            <hr>
-        </div>
-        <div class="product-name">
-            <section class="name" *ngFor="let image of images; let i = index" [ngClass]="{
-                     'selected': i == selectedIndex,
-                     'prev': i == selectedIndex - 1,
-                     'next': i == selectedIndex + 1
-                     }">
-                {{image.name}}
-            </section>
-        </div>
-    </div>
-    <div class="image" *ngFor="let image of images; let i = index" [attr.data-hovered]="isHovered">
-        <img [src]="image.image" alt="image">
-
-
-        <div class="row" [attr.data-hovered]="isHovered">
-            <div class="text">
-                <section>{{image.name}}</section>
-                <section>Brand Foodhub</section>
+            <div class="row-texts" [attr.data-hovered]="isHovered">
+                <div class="number">
+                    <div style="position: relative;">
+                        <section style="margin-right: 8px;">00.0</section>
+                        <section class="num" *ngFor="let image of images; let i = index" [ngClass]="{
+                                        'selected': i == selectedIndex,
+                                        'prev': i == selectedIndex - 1,
+                                        'next': i == selectedIndex + 1
+                                        }">
+                                       {{i + 1}}
+                        </section>
+                    </div>
+                    <hr>
+                </div>
+                <div class="product-name">
+                    <section class="name" *ngFor="let image of images; let i = index" [ngClass]="{
+                             'selected': i == selectedIndex,
+                             'prev': i == selectedIndex - 1,
+                             'next': i == selectedIndex + 1
+                             }">
+                        {{image.name}}
+                    </section>
+                </div>
             </div>
-            <div class="text">
-                <section>Design design</section>
-                <section>09/29/23</section>
+            <div class="image" *ngFor="let image of images; let i = index" [attr.data-hovered]="isHovered">
+                <img [src]="image.image" alt="image">
+        
+        
+                <div class="row" [attr.data-hovered]="isHovered">
+                    <div class="text">
+                        <section>{{image.name}}</section>
+                        <section>Brand Foodhub</section>
+                    </div>
+                    <div class="text">
+                        <section>Design design</section>
+                        <section>09/29/23</section>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -27,11 +27,14 @@ p {
     text-transform: uppercase;
     font-family: Archivo;
     position: relative;
-
+    
     .svg-border {
         position: absolute;
         height: 70vh;
         width: 100%;
+        @media (max-width: 500px) {
+       height: 50vh;
+        }
     }
 
     .text-1 {
@@ -57,4 +60,5 @@ p {
     .view-text-2 {
         overflow: hidden;
     }
+
 }

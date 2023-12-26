@@ -8,10 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './description.component.html',
   styleUrls: ['./description.component.scss']
 })
-export class DescriptionComponent implements OnInit{
+export class DescriptionComponent {
   text!: SplitType;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.text = new SplitType('.tag');
   this.animateText();
   }
@@ -19,8 +19,8 @@ export class DescriptionComponent implements OnInit{
     let textAnimation = gsap.timeline(
       {
         scrollTrigger: {
-          trigger: this.text.lines,
-          start: "top 90%",
+          trigger: '.heading-2 section',
+          start: "bottom 90%",
         }
       }
     )
