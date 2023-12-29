@@ -1,9 +1,9 @@
 .heading {
     margin-top: 21px;
-    margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+
     .links a {
         text-decoration: none;
         color: black;
@@ -25,10 +25,10 @@
 .container {
     // display: flex;
     // flex-direction: column;
-    
+
     // padding-bottom: 100px;
-        padding-top: 10%;
-    
+    padding-top: 10%;
+
     font-family: Archivo;
     font-style: normal;
     font-weight: 400;
@@ -43,9 +43,10 @@
         gap: 3rem;
         word-spacing: 45px;
         margin: 50px 0;
+
         span {
-            word-spacing: 55px; 
-         }
+            word-spacing: 55px;
+        }
     }
 
     .desc {
@@ -54,16 +55,16 @@
         margin: 30px;
         max-width: 303px;
         font-size: 14px;
-       
+
     }
 }
 
 
 .description {
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     overflow: hidden;
-    
+
 }
 
 .scroll {

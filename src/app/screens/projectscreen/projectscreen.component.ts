@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, HostListener, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input, Renderer2 } from '@angular/core';
 
 interface project {
   name: string,
@@ -12,10 +12,13 @@ interface project {
 })
 
 export class ProjectscreenComponent {
-  pressed = false;
- startX = 0;
+  // pressed = false;
+  // startX = 0;
 
- @ViewChild('container', { static: false }) container!: ElementRef;
+  @ViewChild('container', { static: false }) container!: ElementRef;
+  @ViewChild('scrollText') scrollText!: ElementRef;
+  @ViewChild('num') numScroller!: ElementRef;
+
   images: project[] = [
     {
       name: "RousoLletti",
@@ -26,13 +29,12 @@ export class ProjectscreenComponent {
       image: "assets/images/img2.png",
     },
     {
-      name: "LingoLoLo",
-      image: "assets/images/img3.png",
-    },
-
-    {
       name: "Kapsul",
       image: "assets/images/img4.png",
+    },
+    {
+      name: "LingoLoLo",
+      image: "assets/images/img3.png",
     },
   ];
   sections!: HTMLElement[];
@@ -43,29 +45,29 @@ export class ProjectscreenComponent {
     this.sections = Array.from(document.querySelectorAll('.image'));
     this.container.nativeElement.addEventListener('scroll', this.onScroll.bind(this));
   }
-//  onMouseDown(event: MouseEvent) {
-//    this.pressed = true;
-//    this.startX = event.clientX;
-//  }
+  //  onMouseDown(event: MouseEvent) {
+  //    this.pressed = true;
+  //    this.startX = event.clientX;
+  //  }
 
-//  onMouseUp() {
-//    this.pressed = false;
-//  }
+  //  onMouseUp() {
+  //    this.pressed = false;
+  //  }
 
-//  @HostListener('document:mouseleave')
-//  onMouseLeave() {
-//    this.pressed = false;
-//  }
+  //  @HostListener('document:mouseleave')
+  //  onMouseLeave() {
+  //    this.pressed = false;
+  //  }
 
-//  @HostListener('document:mousemove', ['$event'])
-//  onMouseMove(event: MouseEvent) {
-//    if (!this.pressed) {
-//      return;
-//    }
+  //  @HostListener('document:mousemove', ['$event'])
+  //  onMouseMove(event: MouseEvent) {
+  //    if (!this.pressed) {
+  //      return;
+  //    }
 
-//    const wrapperElement: HTMLElement = this.container.nativeElement;
-//    wrapperElement.scrollLeft += this.startX - event.clientX;
-//  }
+  //    const wrapperElement: HTMLElement = this.container.nativeElement;
+  //    wrapperElement.scrollLeft += this.startX - event.clientX;
+  //  }
 
   onScroll() {
     var windowWidth: number = window.innerWidth;
@@ -82,10 +84,20 @@ export class ProjectscreenComponent {
       ) {
         this.selectedIndex = i;
       }
-      
-      
 
     });
+
+    const scrollNumHeight = this.numScroller.nativeElement.scrollHeight / this.images.length;
+    const scrollableDivHeight = this.scrollText.nativeElement.scrollHeight / this.images.length;
+
+    const nameDivRatio = scrollableDivHeight / windowValue;
+    const numDivRatio = scrollNumHeight / windowValue
+
+    const scrollTextOffset = nameDivRatio * scrollValue;
+    const numScrollOffset = numDivRatio * scrollValue;
+
+    this.scrollText.nativeElement.scrollTop = scrollTextOffset;
+    this.numScroller.nativeElement.scrollTop = numScrollOffset;
   }
   setIndex(index: number) {
     if (window.innerWidth > 700) {
